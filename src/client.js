@@ -3,7 +3,13 @@ const qrcode = require('qrcode-terminal');
 
 // Create a new client instance
 const client = new Client({
-    authStrategy: new LocalAuth()
+    webVersionCache: {
+        type: 'local',
+        path:  "./data/web_cache"
+    },
+    authStrategy: new LocalAuth({
+        dataPath: "./data"
+    })
 });
 
 // When the client is ready, run this code (only once)
