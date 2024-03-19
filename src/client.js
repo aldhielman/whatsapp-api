@@ -9,7 +9,14 @@ const client = new Client({
     },
     authStrategy: new LocalAuth({
         dataPath: "./data"
-    })
+    }),
+    puppeteer:{
+        headless: true,
+        args: [
+            '--no-sandbox',
+            'disable-setuid-sandbox',
+        ]
+    }
 });
 
 // When the client is ready, run this code (only once)
