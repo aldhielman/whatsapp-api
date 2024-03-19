@@ -29,6 +29,18 @@ client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
 });
 
+// When the client received QR-Code
+client.on('qr', qr => {
+    qrcode.generate(qr, {small: true});
+});
+
+// When the client received QR-Code
+client.on('message_create', message => {
+    console.log(message)
+});
+
+
+
 // Start your client
 client.initialize();
 
